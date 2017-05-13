@@ -11,6 +11,12 @@ body{
 	font-family: helvetica neue, sans-serif;
 }
 
+h2{
+	display: block;
+	text-align: center;
+	margin-top: 5vh;
+}
+
 .colorFrame, .settings{
 	display: flex;
 	flex-flow: row nowrap;
@@ -36,8 +42,22 @@ body{
 .settings{
 	margin-top: 20px;
 	border: none;
+	height: 5vh;
 }
 .settings span{
 	flex: 1 1 100%;
 	text-align: center;
+	cursor: pointer;
+}
+
+.colorLibrary{
+	display: flex;
+	margin: 0 auto;
+	width: 80%;
+}
+
+.colour{
+	background: chartreuse;
+	height: 100px;
+	width: 100px;
 }
