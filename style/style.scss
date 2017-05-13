@@ -1,0 +1,43 @@
+*{
+	margin:0;
+	padding:0;
+}
+
+body{
+	width: 100%;
+	min-height: 100vh;
+	height: 100%;
+	background: linear-gradient(35deg, honeydew, mistyrose);
+	font-family: helvetica neue, sans-serif;
+}
+
+.colorFrame, .settings{
+	display: flex;
+	flex-flow: row nowrap;
+	width: 50vw;
+	height: 30vh;
+	border: 5px solid #deedee;
+	margin: 0 auto;
+
+	.colorComponent{
+		flex: 1 1 100%;
+		background: powderblue;
+	}
+
+	.two{
+		background: goldenrod;
+	}
+
+	.three{
+		background: tomato;
+	}
+}
+
+.settings{
+	margin-top: 20px;
+	border: none;
+}
+.settings span{
+	flex: 1 1 100%;
+	text-align: center;
+}
