@@ -46,6 +46,12 @@ componentDidMount() {
 }
 
 componentDidUpdate() {
+	const firstColor = document.querySelector('.one');
+	const secondColor = document.querySelector('.two');
+	const thirdColor = document.querySelector('.three');
+	firstColor.style.background = this.props.firstColor;
+	secondColor.style.background = this.props.secondColor;
+	thirdColor.style.background = this.props.thirdColor;
 }
 
 handleFirstColor(){
@@ -54,7 +60,7 @@ handleFirstColor(){
 	let element = document.querySelector('.one');
 	// console.log(element);
 	let arrayOfColors = [...allColors].map((col) => {col.addEventListener('click', () => {
-		element.style.background = col.style.background;
+		// element.style.background = col.style.background;
 		this.props.setColorName(this.props.current, col.style.background);
 	})});
 
@@ -65,7 +71,7 @@ handleSecondColor(){
 	let element = document.querySelector('.two');
 	// console.log(element);
 	let arrayOfColors = [...allColors].map((col) => {col.addEventListener('click', () => {
-		element.style.background = col.style.background;
+		// element.style.background = col.style.background;
 		this.props.setColorName(this.props.current, col.style.background);
 	})});
 }
@@ -75,7 +81,7 @@ handleThirdColor(){
 	let element = document.querySelector('.three');
 	// console.log(element);
 	let arrayOfColors = [...allColors].map((col) => {col.addEventListener('click', () => {
-		element.style.background = col.style.background;
+		// element.style.background = col.style.background;
 		this.props.setColorName(this.props.current, col.style.background);
 	})});
 }
