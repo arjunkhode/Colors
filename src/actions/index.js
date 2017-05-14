@@ -3,8 +3,10 @@ export const SET_FIRST_COLOR = 'SET_FIRST_COLOR';
 export const SET_SECOND_COLOR = 'SET_SECOND_COLOR';
 export const SET_THIRD_COLOR = 'SET_FTHIRDCOLOR';
 export const ADD_COLOR = 'ADD_COLOR';
+export const SET_CURRENT = 'SET_CURRENT';
 
 export function setColors(num){
+	//Sets Number of colors
 	// console.log("setcolors was called with num:", num);
 	return {
 		type: SET_COLORS,
@@ -16,6 +18,13 @@ export function addCol(col){
 	return {
 		type: ADD_COLOR,
 		payload: col,
+	}
+}
+
+export function setCurrent(num){
+	return{
+		type: SET_CURRENT,
+		payload: num,
 	}
 }
 

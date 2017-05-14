@@ -1,19 +1,21 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { setColors } from '../actions/index';
-import { setColorName } from '../actions/index';
-import { addCol } from '../actions/index';
+import { setColors, setColorName, addCol, setCurrent } from '../actions/index';
 import ColorLib from './colorlib';
+// import base from '../base';
 
 // ####### NOTE:  PAY VERY CLOSE ATTENTION TO THE SPELLING 'COLOR' AND 'COLOUR' ##########
 
 class App extends Component {
-	constructor(){
+	constructor() {
 		super();
 		this.setNumColorsTo1 = this.setNumColorsTo1.bind(this);
 		this.setNumColorsTo2 = this.setNumColorsTo2.bind(this);
 		this.setNumColorsTo3 = this.setNumColorsTo3.bind(this);
 		this.addColor = this.addColor.bind(this);
+		this.handleFirstColor = this.handleFirstColor.bind(this);
+		this.handleSecondColor = this.handleSecondColor.bind(this);
+		this.handleThirdColor = this.handleThirdColor.bind(this);
 		// this.renderColors = this.renderColors.bind(this);
 	}
 
@@ -26,7 +28,6 @@ class App extends Component {
 // 		);
 // 	});
 // }
-
 
 componentDidMount() {
 	const secondColor = document.querySelector('.two');
@@ -41,6 +42,48 @@ componentDidMount() {
 		secondColor.style.display = 'block';
 		thirdColor.style.display = 'block';
 	}
+	let allColors = document.querySelectorAll('.colour');
+}
+
+componentDidUpdate() {
+	const firstColor = document.querySelector('.one');
+	const secondColor = document.querySelector('.two');
+	const thirdColor = document.querySelector('.three');
+	firstColor.style.background = this.props.firstColor;
+	secondColor.style.background = this.props.secondColor;
+	thirdColor.style.background = this.props.thirdColor;
+}
+
+handleFirstColor(){
+	this.props.setCurrent(1);
+	let allColors = document.querySelectorAll('.colour');
+	let element = document.querySelector('.one');
+	// console.log(element);
+	let arrayOfColors = [...allColors].map((col) => {col.addEventListener('click', () => {
+		// element.style.background = col.style.background;
+		this.props.setColorName(this.props.current, col.style.background);
+	})});
+
+}
+handleSecondColor(){
+	this.props.setCurrent(2);
+	let allColors = document.querySelectorAll('.colour');
+	let element = document.querySelector('.two');
+	// console.log(element);
+	let arrayOfColors = [...allColors].map((col) => {col.addEventListener('click', () => {
+		// element.style.background = col.style.background;
+		this.props.setColorName(this.props.current, col.style.background);
+	})});
+}
+handleThirdColor(){
+	this.props.setCurrent(3);
+	let allColors = document.querySelectorAll('.colour');
+	let element = document.querySelector('.three');
+	// console.log(element);
+	let arrayOfColors = [...allColors].map((col) => {col.addEventListener('click', () => {
+		// element.style.background = col.style.background;
+		this.props.setColorName(this.props.current, col.style.background);
+	})});
 }
 
 addColor(){
@@ -87,12 +130,13 @@ setNumColorsTo3(){
     return (
       <div className="app">
      	<h1>Look how colors look next to each other</h1>
+     	<h3>Click on a slot below and then click on any color from the library </h3>
       	<div className="colorFrame">
-      		<div className="colorComponent one">
+      		<div onClick={this.handleFirstColor} className="colorComponent one">
       		</div>
-      		<div className="colorComponent two">
+      		<div onClick={this.handleSecondColor} className="colorComponent two">
       		</div>
-      		<div className="colorComponent three">
+      		<div onClick={this.handleThirdColor} className="colorComponent three">
       		</div>
       	</div>
       	<div className="settings">
@@ -121,7 +165,8 @@ function mapStateToProps(state){
 		secondColor: state.secondColor.second,
 		thirdColor: state.thirdColor.third,
 		colors: state.colors.cols,
+		current: state.current.curr,
 	};
 }
 
-export default connect(mapStateToProps,{setColors, addCol, setColorName})(App);
+export default connect(mapStateToProps,{setColors, addCol, setColorName, setCurrent})(App);
