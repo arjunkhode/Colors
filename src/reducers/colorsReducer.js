@@ -30,7 +30,7 @@ const INITIAL_STATE = { cols: [
 'salmon',
 'honeydew',
 'thistle',
-'peachpuff',
+'peachpuff'
 	] };
 
 export default function( state = INITIAL_STATE, action) {

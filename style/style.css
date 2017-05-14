@@ -9,7 +9,7 @@ body {
   background: linear-gradient(35deg, honeydew, mistyrose);
   font-family: helvetica neue, sans-serif; }
 
-h2 {
+h2, h1 {
   display: block;
   text-align: center;
   margin: 5vh 0; }

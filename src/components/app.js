@@ -5,7 +5,7 @@ import { setColorName } from '../actions/index';
 import { addCol } from '../actions/index';
 import ColorLib from './colorlib';
 
-//######## NOTE:  PAY VERY CLOSE ATTENTION TO THE SPELLING 'COLOR' AND 'COLOUR' ##########
+// ####### NOTE:  PAY VERY CLOSE ATTENTION TO THE SPELLING 'COLOR' AND 'COLOUR' ##########
 
 class App extends Component {
 	constructor(){
@@ -28,16 +28,16 @@ class App extends Component {
 // }
 
 
-componentDidMount(){
+componentDidMount() {
 	const secondColor = document.querySelector('.two');
 	const thirdColor = document.querySelector('.three');
-	if(this.props.numColors === 1){
+	if(this.props.numColors === 1) {
 		secondColor.style.display = 'none';
 		thirdColor.style.display = 'none';
-	}if(this.props.numColors === 2){
+	}if(this.props.numColors === 2) {
 		secondColor.style.display = 'block';
 		thirdColor.style.display = 'none';
-	}if(this.props.numColors === 3){
+	}if(this.props.numColors === 3) {
 		secondColor.style.display = 'block';
 		thirdColor.style.display = 'block';
 	}
@@ -86,7 +86,7 @@ setNumColorsTo3(){
   render() {
     return (
       <div className="app">
-     
+     	<h1>Look how colors look next to each other</h1>
       	<div className="colorFrame">
       		<div className="colorComponent one">
       		</div>
