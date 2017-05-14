@@ -10,6 +10,7 @@ class App extends Component {
 		this.setNumColorsTo1 = this.setNumColorsTo1.bind(this);
 		this.setNumColorsTo2 = this.setNumColorsTo2.bind(this);
 		this.setNumColorsTo3 = this.setNumColorsTo3.bind(this);
+		this.addColor = this.addColor.bind(this);
 		// this.renderColors = this.renderColors.bind(this);
 	}
 
@@ -37,6 +38,11 @@ componentDidMount(){
 		secondColor.style.display = 'block';
 		thirdColor.style.display = 'block';
 	}
+}
+
+addColor(){
+	let val = document.querySelector('.newColorValue');
+	console.log(val.value);
 }
 
 setNumColorsTo1(){
@@ -87,8 +93,8 @@ setNumColorsTo3(){
 
       	<div className="newColor">
       		Add Color:
-      		<input type="text" placeholder="#hexval or valid name"/>
-      		<button type="submit" className="addbtn">+</button>
+      		<input type="text" className="newColorValue" placeholder="#hexval or valid name"/>
+      		<button onClick={this.addColor} type="submit" className="addbtn">+</button>
       	</div>
 
       	<h2>Color Library</h2>
