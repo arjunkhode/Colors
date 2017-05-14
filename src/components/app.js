@@ -2,7 +2,10 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { setColors } from '../actions/index';
 import { setColorName } from '../actions/index';
+import { addCol } from '../actions/index';
 import ColorLib from './colorlib';
+
+//######## NOTE:  PAY VERY CLOSE ATTENTION TO THE SPELLING 'COLOR' AND 'COLOUR' ##########
 
 class App extends Component {
 	constructor(){
@@ -42,7 +45,14 @@ componentDidMount(){
 
 addColor(){
 	let val = document.querySelector('.newColorValue');
-	console.log(val.value);
+	let v1 = val.value;
+	// check if new value already exists in our colors array
+	if(this.props.colors.find((col,v1)=>{return col === v1}) === undefined ){
+		this.props.addCol([...this.props.colors, v1]);
+	}
+	else {
+		console.log("Value already present");
+	}
 }
 
 setNumColorsTo1(){
@@ -110,8 +120,8 @@ function mapStateToProps(state){
 		firstColor: state.firstColor.first,
 		secondColor: state.secondColor.second,
 		thirdColor: state.thirdColor.third,
-		colors: state.colors,
+		colors: state.colors.cols,
 	};
 }
 
-export default connect(mapStateToProps,{setColors, setColorName})(App);
+export default connect(mapStateToProps,{setColors, addCol, setColorName})(App);

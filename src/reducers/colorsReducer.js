@@ -1,6 +1,7 @@
-export default function() {
+import { ADD_COLOR } from '../actions/index';
 
-return ['plum',
+const INITIAL_STATE = { cols: [
+'plum',
 'navajowhite',
 'goldenrod',
 'seashell',
@@ -29,5 +30,15 @@ return ['plum',
 'salmon',
 'honeydew',
 'thistle',
-'peachpuff'];
+'peachpuff',
+	] };
+
+export default function( state = INITIAL_STATE, action) {
+
+switch(action.type){
+		case ADD_COLOR:
+			return {...state, cols: action.payload};
+		default: return state;
+	}
+
 }
