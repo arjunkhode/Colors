@@ -50,6 +50,17 @@ h2{
 	cursor: pointer;
 }
 
+.newColor{
+	margin: 3em;
+	text-align: center;
+	input[type=text]{
+		margin: 5px;
+		padding: 5px;
+		height: 2.5em;
+		width: 200px;
+	}
+}
+
 .colorLibrary{
 	display: flex;
 	margin: 0 auto;
@@ -58,7 +69,7 @@ h2{
 }
 
 .colour{
-	flex: 0 1 15%;
+	flex: 0 1 100%;
 	
 	padding: 5px;
 	background: chartreuse;
@@ -67,4 +78,10 @@ h2{
 	align-items: center;
 	height: 100px;
 	width: 100px;
+}
+
+@media only screen and (min-width: 620px){
+	.colour{
+		flex: 0 1 15%;
+	}
 }

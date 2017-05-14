@@ -23,6 +23,7 @@ class App extends Component {
 // 	});
 // }
 
+
 componentDidMount(){
 	const secondColor = document.querySelector('.two');
 	const thirdColor = document.querySelector('.three');
@@ -83,6 +84,12 @@ setNumColorsTo3(){
       		<span onClick={this.setNumColorsTo2}> 2 colors </span>
       		<span onClick={this.setNumColorsTo3}> 3 colors </span>
       	</div>
+
+      	<div className="newColor">
+      		Add Color:
+      		<input type="text" placeholder="#hexval or valid name"/>
+      	</div>
+
       	<h2>Color Library</h2>
       	<ColorLib className="colorLibrary" colours={this.props.colors} />
       </div>
