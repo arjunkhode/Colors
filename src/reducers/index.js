@@ -4,6 +4,7 @@ import firstColorReducer from './firstColorReducer';
 import secondColorReducer from './secondColorReducer';
 import thirdColorReducer from './thirdColorReducer';
 import colorsReducer from './colorsReducer';
+import currentReducer from './currentReducer';
 
 const rootReducer = combineReducers({
   numColors: numColorsReducer,
@@ -11,6 +12,7 @@ const rootReducer = combineReducers({
   secondColor: secondColorReducer,
   thirdColor: thirdColorReducer,
   colors: colorsReducer,
+  current: currentReducer,
 });
 
 export default rootReducer;

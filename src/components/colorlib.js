@@ -7,7 +7,8 @@ export default class ColorLib extends React.Component {
 		{
 			console.log("gift",this.props.colours);
 		return(
-				<div className="colorLibrary"> {this.props.colours.map((col) => {return(<div className="colour" key={col} style={{background:col}}>{col}</div>)})} </div>
+				<div className="colorLibrary"> {this.props.colours.map((col) => {
+					return(<div className="colour" key={col} style={{background:col}}>{col}</div>)})} </div>
 			);
 		}}
 		else return(<div></div>);
