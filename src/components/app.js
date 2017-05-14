@@ -88,6 +88,7 @@ setNumColorsTo3(){
       	<div className="newColor">
       		Add Color:
       		<input type="text" placeholder="#hexval or valid name"/>
+      		<button type="submit" className="addbtn">+</button>
       	</div>
 
       	<h2>Color Library</h2>
