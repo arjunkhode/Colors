@@ -14,7 +14,7 @@ body{
 h2{
 	display: block;
 	text-align: center;
-	margin-top: 5vh;
+	margin: 5vh 0;
 }
 
 .colorFrame, .settings{
@@ -53,11 +53,18 @@ h2{
 .colorLibrary{
 	display: flex;
 	margin: 0 auto;
+	flex-flow: row wrap;
 	width: 80%;
 }
 
 .colour{
+	flex: 0 1 15%;
+	
+	padding: 5px;
 	background: chartreuse;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	height: 100px;
 	width: 100px;
 }
