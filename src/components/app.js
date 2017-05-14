@@ -130,6 +130,7 @@ setNumColorsTo3(){
     return (
       <div className="app">
      	<h1>Look how colors look next to each other</h1>
+     	<h3>Click on a slot below and then click on any color from the library </h3>
       	<div className="colorFrame">
       		<div onClick={this.handleFirstColor} className="colorComponent one">
       		</div>
