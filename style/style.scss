@@ -24,6 +24,8 @@ h2, h1{
 	height: 30vh;
 	border: 5px solid #deedee;
 	margin: 0 auto;
+	background: #222;
+	padding: 50px;
 
 	.colorComponent{
 		flex: 1 1 100%;
@@ -43,6 +45,7 @@ h2, h1{
 	margin-top: 20px;
 	border: none;
 	height: 5vh;
+	background: transparent;
 }
 .settings span{
 	flex: 1 1 100%;

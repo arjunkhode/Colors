@@ -20,7 +20,9 @@ h2, h1 {
   width: 50vw;
   height: 30vh;
   border: 5px solid #deedee;
-  margin: 0 auto; }
+  margin: 0 auto;
+  background: #222;
+  padding: 50px; }
   .colorFrame .colorComponent, .settings .colorComponent {
     flex: 1 1 100%;
     background: powderblue; }
@@ -32,7 +34,8 @@ h2, h1 {
 .settings {
   margin-top: 20px;
   border: none;
-  height: 5vh; }
+  height: 5vh;
+  background: transparent; }
 
 .settings span {
   flex: 1 1 100%;
